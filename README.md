@@ -25,6 +25,4 @@ val exampleWeapon = new Weapon(
     )))
 
 exampleWeapon.attachments = Vector(attachment.balancedHilt)) //After creating the weapon, give it an attachment
-
-
 ```
