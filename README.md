@@ -14,7 +14,7 @@ how much damage does the attack deal on average?
 
 
 When an attack has an extra surge that can't be spent, it will add -1 strain used to the attack.
-As such, the average strain recovery can vary from 0 to -1. (Oops, it being negative is pretty confusing, maybe change it?)
+As such, the amount of strain recovered varies from 0 to 1.
 
 # How to add a weapon.
 
