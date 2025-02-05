@@ -1,87 +1,11 @@
 package ImAs
 
 import scala.compiletime.ops.double
+import ImAs.weapons
 
 
 @main
 def main() = 
-    val IfRifle = new Weapon(Vector(Dice.Green, Dice.Blue), surgeTable(Vector(
-        (1 -> (1, Symbol.Damage))
-    )))
-    //IfRifle.attachments = Vector(attachment.balancedHilt))
-
-    val A280 = new Weapon(Vector(Dice.Green, Dice.Blue), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (2, Symbol.Pierce))
-    )))
-    //A280.attachments = Vector(attachment.balancedHilt))
-
-    
-    val modA280 = new Weapon(Vector(Dice.Green, Dice.Red), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (2, Symbol.Pierce))
-    )))
-
-
-    val lightSaber = new Weapon(Vector(Dice.Blue,Dice.Red), surgeTable(Vector(
-        (1 -> (3, Symbol.Pierce)),
-        (1 -> (1, Symbol.Damage))
-    )))
-
-    val guardLightSaber = new Weapon(Vector(Dice.Blue,Dice.Red), surgeTable(Vector(
-        (1 -> (3, Symbol.Pierce)),
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (1, Symbol.Damage))
-    )))
-
-
-    val vibroAxe = new Weapon(Vector(Dice.Yellow,Dice.Red), surgeTable(Vector(
-        (1 -> (1, Symbol.Pierce))
-    )))
-
-    val forcePike = new Weapon(Vector(Dice.Yellow,Dice.Red,Dice.Yellow), surgeTable(Vector(
-        //(1 -> (2, symbol.Damage)),
-        (1 -> (1, Symbol.Pierce)),
-        (1 -> (1, Symbol.Pierce))
-    )))
-    
-    val guardPike = new Weapon(Vector(Dice.Yellow,Dice.Red,Dice.Yellow), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (1, Symbol.Pierce)),
-        (1 -> (1, Symbol.Pierce))
-    )))
-
-    val BD1 = new Weapon(Vector(Dice.Green,Dice.Red), surgeTable(Vector(
-        (1 -> (1, Symbol.Damage))
-    )))
-
-    val modBD1 = new Weapon(Vector(Dice.Green,Dice.Red), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (1, Symbol.Damage)),
-    )))
-
-    val cleaveMaul = new Weapon(Vector(Dice.Red,Dice.Yellow), surgeTable(Vector(
-        (1 -> (3, Symbol.Pierce))
-    )))
-    cleaveMaul.attachments = Vector(attachment.plus1Damage, attachment.autoCleave2)
-
-    val focusMaul = new Weapon(Vector(Dice.Red,Dice.Yellow, Dice.Green), surgeTable(Vector(
-        (1 -> (3, Symbol.Pierce))
-    )))
-    focusMaul.attachments = Vector(attachment.plus1Damage)
-
-    val eliteDroid = new Weapon(Vector(Dice.Blue,Dice.Yellow,Dice.Yellow), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (2, Symbol.Pierce))
-    )))
-
-    val focusEliteDroid = new Weapon(Vector(Dice.Blue,Dice.Yellow,Dice.Yellow,Dice.Green), surgeTable(Vector(
-        (1 -> (2, Symbol.Damage)),
-        (1 -> (2, Symbol.Pierce))
-    )))
-
-    
-
     def test(weapon: Weapon, defender: Vector[Dice], amount: Int): Float =
         var freq: symbolTally = symbolTally()
 
@@ -228,11 +152,11 @@ def main() =
 
     // println(testDice(Vector(Dice.Red,Dice.Blue), 1000000))
 
-    lightSaber.attachments = Vector(attachment.balancedHilt)
+    weapons.lightSaber.attachments = Vector(attachment.balancedHilt)
     for defence <- dice do
         println(defence.className)
         println("Balanced Hilt Lightsaber:")
-        test(lightSaber,defence,1000000)
+        test(weapons.lightSaber,defence,1000000)
         println("Guarded Light Saber")
-        test(guardLightSaber,defence,1000000)
+        test(weapons.guardLightSaber,defence,1000000)
         println()
