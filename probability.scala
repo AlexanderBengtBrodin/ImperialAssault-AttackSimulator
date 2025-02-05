@@ -13,7 +13,7 @@ def main() =
             freq = freq + weapon.attack(defender)
 
         println("Average Damage: " + s"${freq(Symbol.Damage).toFloat/amount}")
-        println("Average Strain Recovered: " + s"${freq(Symbol.Strain).toFloat/amount}")
+        println("Average Strain Recovered: " + s"${-freq(Symbol.Strain).toFloat/amount}")
 
         return freq(Symbol.Damage).toFloat/amount
 
