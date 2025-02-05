@@ -1,3 +1,7 @@
+# What is this?
+
+This is a crude tool to simulate the average damage of attacks for the "Star Wars: Imperial Assault" boardgame. 
+
 # How to run?
 
 Currently, this program is not for the faint of heart. In the probability.scala file you will find the main method together with 
