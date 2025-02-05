@@ -1,13 +1,13 @@
 package ImAs
 
 import scala.compiletime.ops.double
-import ImAs.weapons
+import ImAs.Weapons
 
 
 @main
 def main() = 
     def test(weapon: Weapon, defender: Vector[Dice], amount: Int): Float =
-        var freq: symbolTally = symbolTally()
+        var freq: SymbolTally = SymbolTally()
 
         for i <- 1 to amount do
             freq = freq + weapon.attack(defender)
@@ -18,7 +18,7 @@ def main() =
         return freq(Symbol.Damage).toFloat/amount
 
     def testDice(dicePool: Vector[Dice], amount: Int): Vector[Float] =
-        var freq: symbolTally = symbolTally()
+        var freq: SymbolTally = SymbolTally()
 
         for i <- 1 to amount do
             freq = freq + dicePool.map(_.roll()).reduce(_ + _) 
@@ -43,27 +43,27 @@ def main() =
     // println()
     
     // println("Testing lightSaber w Balanced hilt: ")
-    // lightSaber.attachments = Vector(attachment.balancedHilt))
+    // lightSaber.Attachments = Vector(Attachment.balancedHilt))
     // test(lightSaber, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing vibroAxe w Balanced hilt: ")
-    // vibroAxe.attachments = Vector(attachment.balancedHilt))
+    // vibroAxe.Attachments = Vector(Attachment.balancedHilt))
     // test(vibroAxe, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing force pike: ")
-    // //vibroAxe.attachments = Vector(attachment.balancedHilt)
+    // //vibroAxe.Attachments = Vector(Attachment.balancedHilt)
     // test(forcePike, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing force pike w Balanced Hit: ")
-    // forcePike.attachments = Vector(attachment.balancedHilt)
+    // forcePike.Attachments = Vector(Attachment.balancedHilt)
     // test(forcePike, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing force pike with high impact guard: ")
-    // vibroAxe.attachments = Vector(attachment.balancedHilt)
+    // vibroAxe.Attachments = Vector(Attachment.balancedHilt)
     // test(guardPike, Vector(Dice.White), 1000000)
     // println()
 
@@ -73,12 +73,12 @@ def main() =
 
     
     // println("Testing A280 with tactical Display: ")
-    // A280.attachments = Vector(attachment.balancedHilt)
+    // A280.Attachments = Vector(Attachment.balancedHilt)
     // test(A280, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing A280 w Disruption cell & Tactical display: ")
-    // modA280.attachments = Vector(attachment.balancedHilt)
+    // modA280.Attachments = Vector(Attachment.balancedHilt)
     // test(modA280, Vector(Dice.Black), 1000000)
     // println()
 
@@ -88,12 +88,12 @@ def main() =
     // println()
 
     // println("Testing balanced BD1: ")
-    // BD1.attachments = Vector(attachment.balancedHilt))
+    // BD1.Attachments = Vector(Attachment.balancedHilt))
     // test(BD1, Vector(Dice.White), 1000000)
     // println()
 
     // println("Testing extended BD1: ")
-    // BD1.attachments = Vector(attachment((a) => a.addSymbol(symbol.Pierce,1)))
+    // BD1.Attachments = Vector(Attachment((a) => a.addSymbol(symbol.Pierce,1)))
     // test(BD1, Vector(Dice.White), 1000000)
     // println()
 
@@ -122,7 +122,7 @@ def main() =
     // test(cleaveMaul, Vector(Dice.Black,Dice.White), 1000000)
     // println()
 
-    // focusMaul.attachments = Vector(attachment.plus1Damage,attachment.autoCleave2)
+    // focusMaul.Attachments = Vector(Attachment.plus1Damage,Attachment.autoCleave2)
     // println("Testing cleave&focus Maul against White: ")
     // test(focusMaul, Vector(Dice.White), 1000000)
     // println()
@@ -142,7 +142,7 @@ def main() =
     //         test(focusEliteDroid,defence,1000000) - test(eliteDroid,defence,1000000)
 
 
-    // focusMaul.attachments = Vector(attachment.plus1Damage,attachment.autoCleave2)
+    // focusMaul.Attachments = Vector(Attachment.plus1Damage,Attachment.autoCleave2)
     // val maulFocusDif = 
     //     for defence <- dice yield
     //         test(focusMaul,defence,1000000) - test(cleaveMaul,defence,1000000)
@@ -152,11 +152,11 @@ def main() =
 
     // println(testDice(Vector(Dice.Red,Dice.Blue), 1000000))
 
-    weapons.lightSaber.attachments = Vector(attachment.balancedHilt)
+    Weapons.lightSaber.Attachments = Vector(Attachment.balancedHilt)
     for defence <- dice do
         println(defence.className)
         println("Balanced Hilt Lightsaber:")
-        test(weapons.lightSaber,defence,1000000)
+        test(Weapons.lightSaber,defence,1000000)
         println("Guarded Light Saber")
-        test(weapons.guardLightSaber,defence,1000000)
+        test(Weapons.guardLightSaber,defence,1000000)
         println()

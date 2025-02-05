@@ -3,10 +3,10 @@ package ImAs
 import scala.compiletime.ops.double
 
 
-class surgeTable(initTable: Vector[(Int,(Int,Symbol))]) {
+class SurgeTable(initTable: Vector[(Int,(Int,Symbol))]) {
     val table: Vector[(Int, (Int, Symbol))] = initTable
 
-    def spendSurges(map: symbolTally): symbolTally = 
+    def spendSurges(map: SymbolTally): SymbolTally = 
         var output = map
         var spendable: Int = map(Symbol.Surge)
 

@@ -1,12 +1,12 @@
 package ImAs
 
-class Weapon(val dicePool: Vector[Dice], val surgeTable: surgeTable) {
+class Weapon(val dicePool: Vector[Dice], val SurgeTable: SurgeTable) {
 
-    var attachments: Vector[attachment] = Vector.empty
+    var Attachments: Vector[Attachment] = Vector.empty
 
-    def attack(defence:Vector[Dice]): symbolTally =
+    def attack(defence:Vector[Dice]): SymbolTally =
         val defenceRoll = defence.map(_.roll()).reduce(_ + _) 
-        var output: symbolTally = dicePool.map(_.roll()).reduce(_ + _) 
+        var output: SymbolTally = dicePool.map(_.roll()).reduce(_ + _) 
 
         if (defenceRoll(Symbol.Dodge) > 0) {
             return output.setSymbol(Symbol.Damage,0)
@@ -15,13 +15,13 @@ class Weapon(val dicePool: Vector[Dice], val surgeTable: surgeTable) {
         // println("Rolled Attack: " + output.toString())
         // println("Rolled Defence: " + defenceRoll.toString())
 
-        for attch <- attachments do 
+        for attch <- Attachments do 
             output = attch.modify(output)
         
         output = output.addSymbol(Symbol.Surge, -defenceRoll(Symbol.Evade))
         //println(output.toString())
 
-        output = surgeTable.spendSurges(output)
+        output = SurgeTable.spendSurges(output)
         //println(output.toString())
 
         
