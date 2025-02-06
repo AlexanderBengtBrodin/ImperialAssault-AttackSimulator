@@ -4,7 +4,7 @@ package ImAs
 class Defender(val dicePool: Vector[Dice]) {
     assert(dicePool.isEmpty || dicePool.contains(Dice.White) || dicePool.contains(Dice.Black))
 
-    var modifiers: Vector[Attachment] = Vector.empty
+    var modifiers: Vector[(SymbolTally) => SymbolTally] = Vector.empty
 
     def defend() =
         var output = 
@@ -12,7 +12,7 @@ class Defender(val dicePool: Vector[Dice]) {
             .reduce(_ + _)
         
         modifiers.foreach(mod => 
-                output = mod.modify(output)
+                output = mod.apply(output)
             )
 
         output
