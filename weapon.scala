@@ -22,24 +22,15 @@ class Weapon(val attackPool: Vector[Dice], val SurgeTable: SurgeTable) {
         if (defenceTally(Symbol.Dodge) > 0) {
             return attackTally.setSymbol(Symbol.Damage,0)
         }
-        
-        // println("Rolled Attack: " + attackTally.toString())
-        // println("Rolled Defence: " + defenceRoll.toString())
 
         for attch <- Attachments do 
             attackTally = attch.modify(attackTally)
         
-        attackTally = attackTally.addSymbol(Symbol.Surge, -defenceTally(Symbol.Evade))
-        //println(attackTally.toString())
+        attackTally = attackTally.evadedBy(defenceTally)
 
         attackTally = SurgeTable.spendSurges(attackTally)
-        //println(attackTally.toString())
 
-        
-        attackTally = attackTally.addSymbol(Symbol.Damage, -(defenceTally(Symbol.Block)-attackTally(Symbol.Pierce).min(0)))
-        //println(output.toString())
-
-        return attackTally
+        return attackTally.blockedBy(defenceTally)
 
 
         

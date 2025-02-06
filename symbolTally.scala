@@ -35,6 +35,12 @@ class SymbolTally(initMap: Map[Symbol, Int] = Map()) {
 
         return SymbolTally(initmap)
 
+    def evadedBy(other: SymbolTally): SymbolTally =
+        return this.addSymbol(Symbol.Surge, -other(Symbol.Evade))
+
+    def blockedBy(other: SymbolTally): SymbolTally =
+        return this.addSymbol(Symbol.Damage, -(other(Symbol.Block)-this(Symbol.Pierce).min(0)))
+
     override def toString(): String =
         return map.map((sym,int) => s"$int $sym").mkString(",")
 }
