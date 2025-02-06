@@ -1,8 +1,8 @@
 package ImAs
-
+import Dice.* 
 
 class Defender(val dicePool: Vector[Dice]) {
-    assert(dicePool.isEmpty || dicePool.contains(Dice.White) || dicePool.contains(Dice.Black))
+    assert(dicePool.isEmpty || dicePool.contains(White) || dicePool.contains(Black))
 
     var modifiers: Vector[(SymbolTally) => SymbolTally] = Vector.empty
 

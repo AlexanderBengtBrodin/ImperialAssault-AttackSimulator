@@ -2,6 +2,8 @@ package ImAs
 
 import scala.compiletime.ops.double
 import ImAs.Weapons
+import ImAs.Defenders
+import Dice.* 
 
 
 @main
@@ -29,113 +31,113 @@ def main() =
 
     
     // println("Testing IfRifle: ")
-    // test(IfRifle, Vector(Dice.Black), 1000000)
+    // test(IfRifle, Vector(Black), 1000000)
 
     // println("Testing A280: ")
-    // test(A280, Vector(Dice.Black), 1000000)
+    // test(A280, Vector(Black), 1000000)
 
     // println("Testing lightSaber: ")
-    // test(lightSaber, Vector(Dice.White), 1000000)
+    // test(lightSaber, Vector(White), 1000000)
     // println()
 
     // println("Testing vibroAxe: ")
-    // test(vibroAxe, Vector(Dice.White), 1000000)
+    // test(vibroAxe, Vector(White), 1000000)
     // println()
     
     // println("Testing lightSaber w Balanced hilt: ")
     // lightSaber.Attachments = Vector(Attachment.balancedHilt))
-    // test(lightSaber, Vector(Dice.White), 1000000)
+    // test(lightSaber, Vector(White), 1000000)
     // println()
 
     // println("Testing vibroAxe w Balanced hilt: ")
     // vibroAxe.Attachments = Vector(Attachment.balancedHilt))
-    // test(vibroAxe, Vector(Dice.White), 1000000)
+    // test(vibroAxe, Vector(White), 1000000)
     // println()
 
     // println("Testing force pike: ")
     // //vibroAxe.Attachments = Vector(Attachment.balancedHilt)
-    // test(forcePike, Vector(Dice.White), 1000000)
+    // test(forcePike, Vector(White), 1000000)
     // println()
 
     // println("Testing force pike w Balanced Hit: ")
     // forcePike.Attachments = Vector(Attachment.balancedHilt)
-    // test(forcePike, Vector(Dice.White), 1000000)
+    // test(forcePike, Vector(White), 1000000)
     // println()
 
     // println("Testing force pike with high impact guard: ")
     // vibroAxe.Attachments = Vector(Attachment.balancedHilt)
-    // test(guardPike, Vector(Dice.White), 1000000)
+    // test(guardPike, Vector(White), 1000000)
     // println()
 
     // println("Testing A280: ")
-    // test(A280, Vector(Dice.White), 1000000)
+    // test(A280, Vector(White), 1000000)
     // println()
 
     
     // println("Testing A280 with tactical Display: ")
     // A280.Attachments = Vector(Attachment.balancedHilt)
-    // test(A280, Vector(Dice.White), 1000000)
+    // test(A280, Vector(White), 1000000)
     // println()
 
     // println("Testing A280 w Disruption cell & Tactical display: ")
     // modA280.Attachments = Vector(Attachment.balancedHilt)
-    // test(modA280, Vector(Dice.Black), 1000000)
+    // test(modA280, Vector(Black), 1000000)
     // println()
 
 
     // println("Testing BD1: ")
-    // test(BD1, Vector(Dice.White), 1000000)
+    // test(BD1, Vector(White), 1000000)
     // println()
 
     // println("Testing balanced BD1: ")
     // BD1.Attachments = Vector(Attachment.balancedHilt))
-    // test(BD1, Vector(Dice.White), 1000000)
+    // test(BD1, Vector(White), 1000000)
     // println()
 
     // println("Testing extended BD1: ")
     // BD1.Attachments = Vector(Attachment((a) => a.addSymbol(symbol.Pierce,1)))
-    // test(BD1, Vector(Dice.White), 1000000)
+    // test(BD1, Vector(White), 1000000)
     // println()
 
     // println("Testing focus Maul against White: ")
-    // test(focusMaul, Vector(Dice.White), 1000000)
+    // test(focusMaul, Vector(White), 1000000)
     // println()
 
     // println("Testing focus Maul against Black: ")
-    // test(focusMaul, Vector(Dice.Black), 1000000)
+    // test(focusMaul, Vector(Black), 1000000)
     // println()
 
     // println("Testing focus Maul against Black&White: ")
-    // test(focusMaul, Vector(Dice.Black,Dice.White), 1000000)
+    // test(focusMaul, Vector(Black,White), 1000000)
     // println()
 
 
     // println("Testing cleave Maul against White: ")
-    // test(cleaveMaul, Vector(Dice.White), 1000000)
+    // test(cleaveMaul, Vector(White), 1000000)
     // println()
 
     // println("Testing cleave Maul against Black: ")
-    // test(cleaveMaul, Vector(Dice.Black), 1000000)
+    // test(cleaveMaul, Vector(Black), 1000000)
     // println()
 
     // println("Testing cleave Maul against Black&White: ")
-    // test(cleaveMaul, Vector(Dice.Black,Dice.White), 1000000)
+    // test(cleaveMaul, Vector(Black,White), 1000000)
     // println()
 
     // focusMaul.Attachments = Vector(Attachment.plus1Damage,Attachment.autoCleave2)
     // println("Testing cleave&focus Maul against White: ")
-    // test(focusMaul, Vector(Dice.White), 1000000)
+    // test(focusMaul, Vector(White), 1000000)
     // println()
 
     // println("Testing cleave&focus Maul against Black: ")
-    // test(focusMaul, Vector(Dice.Black), 1000000)
+    // test(focusMaul, Vector(Black), 1000000)
     // println()
 
     // println("Testing cleave&focus Maul against Black&White: ")
-    // test(focusMaul, Vector(Dice.Black,Dice.White), 1000000)
+    // test(focusMaul, Vector(Black,White), 1000000)
     // println()
 
-    val dice = Vector(Vector(Dice.White),Vector(Dice.Black),Vector(Dice.White,Dice.Black))
+    val dice = Vector(Vector(White),Vector(Black),Vector(White,Black))
     
     // val droidFocusDif =
     //     for defence <- dice yield
@@ -150,7 +152,7 @@ def main() =
     // println("Maul: " + maulFocusDif.mkString(", "))
     // println("Droid: " + droidFocusDif.mkString(", "))
 
-    // println(testDice(Vector(Dice.Red,Dice.Blue), 1000000))
+    // println(testDice(Vector(Red,Blue), 1000000))
 
     Weapons.lightSaber.Attachments = Vector(Attachment.balancedHilt)
     for defence <- dice do
