@@ -2,7 +2,12 @@ package ImAs
 
 import scala.compiletime.ops.double
 
-
+/**
+  * The surgetable used to spend surges aquired when attacking. 
+  * Currently has no way of intelligently selecting surge choices, rather it just goes down the list.
+  *
+  * @param initTable
+  */
 class SurgeTable(initTable: Vector[(Int,(Int,Symbol))]) {
     val table: Vector[(Int, (Int, Symbol))] = initTable
 

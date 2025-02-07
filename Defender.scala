@@ -1,6 +1,9 @@
 package ImAs
 import Dice.* 
 
+/**
+  * Represent a figure's defence die and defence modifiers.
+  */
 class Defender(val dicePool: Vector[Dice]) {
     assert(dicePool.isEmpty || dicePool.contains(White) || dicePool.contains(Black))
 

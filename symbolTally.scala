@@ -1,7 +1,11 @@
 package ImAs
 
 
-
+/**
+  * An immutable class used to store and manage Symbols.
+  *
+  * @param initMap
+  */
 class SymbolTally(initMap: Map[Symbol, Int] = Map()) {
     val map: Map[Symbol, Int] = initMap
 

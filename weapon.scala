@@ -1,5 +1,11 @@
 package ImAs
 
+/**
+  * Represents a weapon card. Contains a attack dice, surgeTable and list of attachments.
+  *
+  * @param attackPool
+  * @param SurgeTable
+  */
 class Weapon(val attackPool: Vector[Dice], val SurgeTable: SurgeTable) {
 
     var Attachments: Vector[Attachment] = Vector.empty

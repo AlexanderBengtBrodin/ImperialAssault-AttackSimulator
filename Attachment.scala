@@ -2,6 +2,11 @@ package ImAs
 
 
 
+/**
+  * Attatchments are weapon modifiers that apply after rolling attack dice.
+  *
+  * @param modifier
+  */
 enum Attachment(modifier: (SymbolTally) => SymbolTally):
     def modify(sym: SymbolTally): SymbolTally =
         return modifier.apply(sym)

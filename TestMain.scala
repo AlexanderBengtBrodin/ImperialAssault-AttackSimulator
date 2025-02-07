@@ -6,6 +6,10 @@ import ImAs.Defenders
 import Dice.* 
 import ImAs.Weapons.IfRifle
 
+/**
+  * The main class of this project, write or uncomment code to test average damage and strain recovered.
+  * Prints directly to the terminal.
+  */
 object TestMain {
 
     def main(args: Array[String]): Unit = 
