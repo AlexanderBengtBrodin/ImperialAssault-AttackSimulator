@@ -4,7 +4,7 @@ This is a crude tool to simulate the average damage of attacks for the "Star War
 
 # How to run?
 
-Currently, this program is not for the faint of heart. In the probability.scala file you will find the main method together with 
+Currently, this program is not for the faint of heart. In the TestMain.scala file you will find the main method together with 
 many core set weapons. All results are printed directly to the terminal. 
 
 # What does it test?
