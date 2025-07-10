@@ -9,7 +9,9 @@ class Defender(val dicePool: Vector[Dice]) {
 
     var modifiers: Vector[(SymbolTally) => SymbolTally] = Vector.empty
 
-    def defend() =
+    def defend(): SymbolTally =
+        if (dicePool.isEmpty) {return SymbolTally.empty}
+
         var output = 
             dicePool.map(_.roll())
             .reduce(_ + _)

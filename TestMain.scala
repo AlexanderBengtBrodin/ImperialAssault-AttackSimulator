@@ -4,7 +4,8 @@ import scala.compiletime.ops.double
 import ImAs.Weapons
 import ImAs.Defenders
 import Dice.* 
-import ImAs.Weapons.IfRifle
+import ImAs.Weapons.*
+import ImAs.Attachment.*
 
 /**
   * The main class of this project, write or uncomment code to test average damage and strain recovered.
@@ -64,5 +65,76 @@ object TestMain {
         //     Defenders.blackDice,
         //     1000000
         // )
-        
+
+
+        // A280.Attachments = Vector(Attachment.balancedHilt)
+        // modA280.Attachments = Vector(Attachment.balancedHilt)
+
+        // printingTest(
+        //     "BalancedHilt A280",
+        //     Weapons.A280,
+        //     Defenders.unguarded,
+        //     1000000
+        // )
+
+        // printingTest(
+        //     "DisruptionCell BalancedHilt A280",
+        //     Weapons.modA280,
+        //     Defenders.unguarded,
+        //     1000000
+        // )
+
+        // BdVibroAxe.Attachments = Vector(balancedHilt,extendedHaft)
+
+        // printingTest(
+        //     "VibroAxe",
+        //     Weapons.BdVibroAxe,
+        //     Defenders.unguarded,
+        //     1000000
+        // )
+
+        printingTest(
+            "PunchDagger against Unarmored",
+            Weapons.punchDagger,
+            Defenders.unguarded,
+            100000
+        )
+
+        printingTest(
+            "PunchDagger against Black",
+            Weapons.punchDagger,
+            Defenders.blackDice,
+            100000
+        )
+
+        printingTest(
+            "PunchDagger against White",
+            Weapons.punchDagger,
+            Defenders.whiteDice,
+            100000
+        )
+
+        printingTest(
+            "BdVibro unguarded",
+            Weapons.BdVibroAxe,
+            Defenders.unguarded,
+            100000
+        )
+
+        printingTest(
+            "BdVibro Black",
+            Weapons.BdVibroAxe,
+            Defenders.blackDice,
+            100000
+        )
+
+        printingTest(
+            "BdVibro white",
+            Weapons.BdVibroAxe,
+            Defenders.whiteDice,
+            100000
+        )
+
+
+
 }

@@ -15,11 +15,10 @@ object Weapons {
     //A280.Attachments = Vector(Attachment.balancedHilt))
 
     
-    lazy val modA280 = new Weapon(Vector(Green, Red), SurgeTable(Vector(
+    val modA280 = new Weapon(Vector(Green, Red), SurgeTable(Vector(
         (1 -> (2, Symbol.Damage)),
         (1 -> (2, Symbol.Pierce))
     )))
-
 
     lazy val lightSaber = new Weapon(Vector(Blue,Red), SurgeTable(Vector(
         (1 -> (3, Symbol.Pierce)),
@@ -36,6 +35,12 @@ object Weapons {
     lazy val vibroAxe = new Weapon(Vector(Yellow,Red), SurgeTable(Vector(
         (1 -> (1, Symbol.Pierce))
     )))
+
+    lazy val BdVibroAxe = new Weapon(Vector(Green,Red), SurgeTable(Vector(
+        // (1 -> (2, Symbol.Damage)),
+        (1 -> (1, Symbol.Damage))
+    )))
+
 
     lazy val forcePike = new Weapon(Vector(Yellow,Red,Yellow), SurgeTable(Vector(
         //(1 -> (2, symbol.Damage)),
@@ -77,5 +82,7 @@ object Weapons {
         (1 -> (2, Symbol.Damage)),
         (1 -> (2, Symbol.Pierce))
     )))
+
+    lazy val punchDagger = new PunchDagger
 
 }

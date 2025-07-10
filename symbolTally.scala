@@ -48,3 +48,7 @@ class SymbolTally(initMap: Map[Symbol, Int] = Map()) {
     override def toString(): String =
         return map.map((sym,int) => s"$int $sym").mkString(",")
 }
+
+object SymbolTally {
+    val empty = SymbolTally(Map())
+}

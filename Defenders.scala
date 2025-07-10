@@ -3,6 +3,8 @@ import Dice.*
 
 object Defenders {
 
+    lazy val unguarded = new Defender(Vector())
+
     lazy val whiteDice = new Defender(Vector(White))
 
     lazy val blackDice = new Defender(Vector(Black))
